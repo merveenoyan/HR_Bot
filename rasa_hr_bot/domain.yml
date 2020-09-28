@@ -1,0 +1,114 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - state_applied_job
+  - state_user_name
+  - state_employment_status
+  - state_user_experience
+  - state_school
+  - state_email
+  - apply_for_job
+  - chitchat
+  - faq
+  - state_motivations
+
+entities:
+  - applied_job
+  - user_name
+  - user_experience
+  - school
+  - employment_status
+  - email
+  - motivations
+
+
+forms: 
+  job_form:
+    user_name:
+    - type: from_text
+      intent: state_user_name
+    applied_job:
+    - type: from_entity
+      entity: applied_job
+    user_experience:
+    - type: from_text
+      intent: state_user_experience
+    school: 
+    - type: from_entity
+      entity: school
+    employment_status:
+    - type: from_entity
+      entity: employment_status
+    motivations:
+    - type: from_text
+      intent: state_motivations
+    email:
+    - type: from_entity
+      entity: email
+
+slots:
+  user_name:
+    type: unfeaturized
+  user_experience:
+    type: unfeaturized
+  school:
+    type: unfeaturized
+  applied_job:
+    type: unfeaturized
+  employment_status:
+    type: unfeaturized
+  email:
+    type: unfeaturized
+  motivations:
+    type: unfeaturized
+
+
+responses:
+  utter_greet:
+  - text: "Hello, I'm HRBot, how can I help you today?"
+
+  utter_goodbye:
+  - text: "See you soon!"
+
+  utter_ask_user_name:
+  - text: "Can I have your full name?"
+
+  utter_ask_applied_job:
+  - text: "Which job are you applying for?"
+
+  utter_ask_employment_status:
+  - text: "Awesome! Are you currently employed?"
+
+  utter_ask_user_experience:
+  - text: "Thank you for taking the time to answer. Do you have any experience relevant to {applied_job}?"
+
+  utter_ask_school:
+  - text: "What is the latest degree you've obtained?"
+
+  utter_ask_email:
+  - text: "Great! Can you leave your e-mail address for us to contact you?"
+  
+  utter_application_complete:
+  - text: "I've received your application successfully, thank you for your interest!"
+
+  utter_ask_motivations:
+  - text: "Can you talk about your motivations on applying for this position?"
+
+  utter_chitchat/ask_name:
+  - text: "I'm called HRBot :)"
+
+  utter_faq/email:
+  - text: "You can reach us here: hrbot@hrbot.com"
+
+  utter_chitchat/open_time:
+  - text: "We are open between 8 am and 8 pm but I'm here 7/24!"
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

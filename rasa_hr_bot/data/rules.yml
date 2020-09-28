@@ -1,0 +1,30 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: respond to FAQs
+  steps:
+    - intent: faq
+    - action: utter_faq
+
+- rule: Say `hello` whenever the user sends a message with intent `greet`
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: respond to chitchat
+  steps:
+    - intent: chitchat
+    - action: utter_chitchat
+
+- rule: Activate form
+  steps:
+  - intent: apply_for_job
+  - action: job_form
+  - active_loop: job_form
+

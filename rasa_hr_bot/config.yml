@@ -1,0 +1,50 @@
+language: en
+pipeline:
+- name: "SpacyNLP"
+  model: "en_core_web_md"
+  case_sensitive: False
+- name: SpacyTokenizer
+- name: SpacyFeaturizer
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: "char_wb"
+  min_ngram: 1
+  max_ngram: 4
+- name: CRFEntityExtractor
+- name: DIETClassifier
+  epochs: 120
+  intent_tokenization_flag: true
+  intent_split_symbol: +
+  similarity: cosine
+  loss_type: margin
+  drop_rate_attention: 0.005
+  evaluate_every_number_of_epochs: 5
+  evaluate_on_number_of_examples: 11
+  regularization_constant: 0.005
+  tensorboard_log_directory: "logs"
+  tensorboard_log_level: "epoch"
+- name: EntitySynonymMapper
+- name: ResponseSelector
+  epochs: 100
+  retrieval_intent: chitchat
+- name: DucklingHTTPExtractor
+  url: http://localhost:8000
+  dimensions: [ "email" ]
+  locale: en_US
+  timeout: 3
+
+policies:
+- name: MemoizationPolicy
+- name: TEDPolicy
+  epochs: 90
+  random_seed: 1
+  regularization_constant: 0.005
+  drop_rate_attention: 0.5
+  drop_rate_label: 0.3
+  evaluate_every_number_of_epochs: 5
+  evaluate_on_number_of_examples: 11
+  tensorboard_log_directory: "logs"
+  tensorboard_log_level: "epoch"
+- name: RulePolicy
+

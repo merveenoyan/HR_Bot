@@ -1,0 +1,200 @@
+version: "2.0"
+
+nlu:
+
+
+- lookup: school
+  examples: |
+    - high school
+    - university
+    - college
+    - dropout
+    - college dropout
+    - phd
+    - master's
+    - dropout
+    - undergraduate
+    - bachelor's
+    - diploma
+
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - heyy
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - good bye
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - byee
+
+- intent: chitchat/open_time
+  examples: |
+    - When do you open? 
+    - What are your working hours?
+    - When are you open?
+    - Are you open?
+    - What time do you open?
+    - What is your opening hours?
+
+- intent: state_school
+  examples: | 
+    - I have graduated from [high school]{"entity": "school"}
+    - [high school]{"entity": "school"}
+    - I have a [college]{"entity": "school"} degree
+    - I have a [phd]{"entity": "school"}
+    - it's [university]{"entity": "school"}
+    - I'm still studying in [master's]{"entity": "school"}
+    - I'm a student in [master's]{"entity": "school"} programme
+    - I'm a [college dropout]{"entity": "school"} programme
+    - I'm a [dropout]{"entity": "school"} programme
+    - I'm an [undergraduate]{"entity": "school"} programme
+    - I'm still studying in [bachelor's]{"entity": "school"}
+    - I'm still studying in [high school]{"entity": "school"}
+    - I have a [master's]{"entity": "school"} degree
+    - I have an [msc]{"entity": "school"} degree
+    - I'm still studying
+    - I'm a [high school]{"entity": "school"} graduate
+    - I graduated from [high school]{"entity": "school"}
+    - I graduated from [university]{"entity": "school"}
+    - I graduated from [college]{"entity": "school"}
+    - I graduated from [phd]{"entity": "school"}
+
+
+
+
+- intent: state_employment_status
+  examples: |
+    - I'm [unemployed]{"entity":"employment_status"}
+    - I'm [still working]{"entity":"employment_status"}
+    - I [don't have a job]{"entity":"employment_status"}
+    - I'm [not working]{"entity":"employment_status"}
+    - I'm [employed]{"entity":"employment_status"}
+    - I [work]{"entity":"employment_status"} for a company
+    - I've [recently quit]{"entity":"employment_status"}
+    - I've [quit]{"entity":"employment_status"}
+    - I currently [don't work]{"entity":"employment_status"} for anywhere
+
+- intent: state_user_experience
+  examples: |
+    - I don't have
+    - I don't
+    - no I don't
+    - yes I do
+    - yes
+    - I have eight years of experience
+    - I have experience
+    - I don't have an experience
+    - I have a year of job experience
+    - I have an experience
+    - I'm experienced
+
+
+- intent: state_user_name
+  examples: |
+    - my name is Merve Noyan
+    - I'm Merve Noyan
+    - my name is John Doe
+    - my name is John
+    - Merve Noyan
+    - My name is Tim Cook
+    - I'm Jeff bezos
+    - Elon Musk
+    - I'm Larry Page
+    - Larry Page 
+  
+
+
+- intent: state_applied_job
+  examples: |
+    - I applied for [hr]{"entity":"applied_job"} department 
+    - I wanted to apply for [software development]{"entity":"applied_job"} 
+    - [human resources]{"entity":"applied_job"}
+    - I'm applying for [data scientist]{"entity":"applied_job"} job opening
+    - the position I want to apply for is [ml engineer]{"entity":"applied_job"} job opening
+    - the position I want to apply for is [intern]{"entity":"applied_job"} job 
+    - I want to apply for [accountant]{"entity":"applied_job"} job 
+    - [engineer]{"entity":"applied_job"} job opening
+    - [sales]{"entity":"applied_job"} job opening
+    - [data engineer]{"entity":"applied_job"} position
+    - [hr intern]{"entity":"applied_job"} job 
+    - I want to apply for the [financial accountant]{"entity":"applied_job"} job 
+    - [account manager]{"entity":"applied_job"} job on your website
+    - [senior data scientist]{"entity":"applied_job"} job 
+    - [software developer]{"entity":"applied_job"} job 
+    - I'm applying for [system administrator]{"entity":"applied_job"} job 
+    - I'm applying for [systems engineering]{"entity":"applied_job"} job 
+    - the job I'm applying for is [human resources specialist]{"entity":"applied_job"} 
+    - I applied for [marketing]{"entity":"applied_job"} department 
+    - I applied for [sales]{"entity":"applied_job"} department 
+
+- intent: faq/email
+  examples: |
+    - Can I have an e-mail?
+    - Can I have your e-mail
+    - What is your email
+    - I need your email
+    - I want your e-mail
+    - I want to get your email
+    - Can you give me an email address
+    - Can I get your e-mail
+    - Give me an e-mail address
+
+- intent: chitchat/ask_name
+  examples: |
+    - What is your name?
+    - Do you have a name?
+    - Can you tell me your name?
+    - Who are you
+    - Can I have your name?
+    - What are you called
+    - Can you give me your name?
+    - I want to know your name
+
+- intent: apply_for_job
+  examples: |
+    - I want to apply for a job
+    - Do you have any job opening
+    - I want to apply for full time job
+    - I want to ask for the job opening
+    - apply for job
+    - are you hiring
+    - can I submit an application
+    - I want to submit an application
+    - job application
+    - I want to apply
+    - I want to apply for job opening
+    - I want to apply for a position
+
+- intent: state_motivations
+  examples: |
+    - I need this position
+    - I need to earn money
+    - I want this job 
+    - I need a reference
+    - I need experience
+    - that would be great for my career
+    - this would be good for my career
+    - I want to kickstart my career with this job
+    - I really liked the position
+    - I want to start my career
+
+
+

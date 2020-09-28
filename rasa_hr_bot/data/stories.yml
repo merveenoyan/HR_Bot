@@ -1,0 +1,43 @@
+version: "2.0"
+
+stories:
+
+
+- story: applying for job path
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: apply_for_job
+    - action: job_form
+    - active_loop: job_form
+    - active_loop: null
+    - action: utter_application_complete
+
+#- story: happy path
+#  steps:
+#    - intent: greet
+#    - action: utter_greet
+#    - intent: apply_for_job
+#    - action: job_form
+#    - intent: chitchat
+#    - action: utter_chitchat
+#    - active_loop: job_form
+#    - active_loop: null
+#    - action: utter_application_complete
+
+#- story: happy path
+#  steps:
+#    - intent: greet
+#    - action: utter_greet
+#    - intent: apply_for_job
+#    - action: job_form
+#    - intent: chitchat
+#    - action: utter_chitchat
+#    - active_loop: job_form
+#    - active_loop: null
+#    - action: utter_application_complete
+
+
+
+
+
